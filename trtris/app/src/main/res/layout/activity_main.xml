@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/btnFull"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:text="点击空白区域返回全屏"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rootLayout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ivBg"
+            android:scaleType="fitXY"
+            android:src="@mipmap/game_bg"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/grid_padding"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/gameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:background="@drawable/game_border">
+                    <com.wanggang.tetris.widget.Tetris
+                        android:id="@+id/game"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:layout_weight="2">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="84dp">
+
+                        <TextView
+                            android:id="@+id/tvScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:text="0"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            android:layout_alignParentBottom="true"
+                            android:textColor="@color/colorPrimary"
+                            android:background="@drawable/tab_border"/>
+
+                        <TextView
+                            android:id="@+id/tvScoreTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="分数"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/tab_bg"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="84dp"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/tvHighScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:text="0"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/tab_border"/>
+
+                        <TextView
+                            android:id="@+id/tvHighScoreTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="最高分"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/tab_bg"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout
+                            android:id="@+id/nextLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp"
+                            android:layout_marginTop="28dp"
+                            android:background="@drawable/tab_border">
+                            <com.wanggang.tetris.widget.TetrisNext
+                                android:id="@+id/gameNext"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvNextTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="下一个"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/tab_bg"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+                        <ImageButton
+                            android:id="@+id/btnVoice"
+                            android:layout_width="@dimen/game_button_small"
+                            android:layout_height="@dimen/game_button_small"
+                            android:src="@drawable/voice"
+                            android:scaleType="fitCenter"
+                            android:padding="8dp"/>
+
+                        <ImageButton
+                            android:id="@+id/btnSetting"
+                            android:layout_width="@dimen/game_button_small"
+                            android:layout_height="@dimen/game_button_small"
+                            android:src="@mipmap/icon_setting"
+                            android:scaleType="fitCenter"
+                            android:layout_marginLeft="8dp"
+                            android:padding="8dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/grid_padding"
+                android:paddingRight="@dimen/grid_padding"
+                android:paddingBottom="@dimen/grid_padding"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/btnLeft"
+                        android:layout_width="@dimen/game_button"
+                        android:layout_height="@dimen/game_button"
+                        android:src="@mipmap/icon_left"
+                        android:scaleType="fitCenter"
+                        android:padding="16dp"/>
+
+                    <ImageButton
+                        android:id="@+id/btnRight"
+                        android:layout_width="@dimen/game_button"
+                        android:layout_height="@dimen/game_button"
+                        android:src="@mipmap/icon_right"
+                        android:scaleType="fitCenter"
+                        android:layout_alignParentRight="true"
+                        android:padding="16dp"/>
+
+                    <ImageButton
+                        android:id="@+id/btnDown"
+                        android:layout_width="@dimen/game_button"
+                        android:layout_height="@dimen/game_button"
+                        android:src="@mipmap/icon_down"
+                        android:scaleType="fitCenter"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/game_button_margin"
+                        android:padding="16dp"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center"
+                    android:layout_weight="2">
+                    <ImageButton
+                        android:id="@+id/btnChange"
+                        android:layout_width="@dimen/game_button_large"
+                        android:layout_height="@dimen/game_button_large"
+                        android:src="@mipmap/icon_refresh"
+                        android:scaleType="fitCenter"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="16dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

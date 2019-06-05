@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="GreenTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="mainColor">@color/green</item>
+        <item name="darkColor">@color/greenDark</item>
+    </style>
+
+    <style name="RedTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="mainColor">@color/red</item>
+        <item name="darkColor">@color/redDark</item>
+    </style>
+
+    <style name="BlueTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="mainColor">@color/blue</item>
+        <item name="darkColor">@color/blueDark</item>
+    </style>
+
+    <style name="YellowTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="mainColor">@color/yellow</item>
+        <item name="darkColor">@color/yellowDark</item>
+    </style>
+
+
+</resources>
